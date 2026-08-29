@@ -174,19 +174,23 @@ OpenMusicIn has one function: when you are looking at an album, track or artist 
 
 That is all it does. It does not inject advertising, does not modify the page's own content, does not change your search settings, and does not add unrelated features. The bar appears only on release pages of the six supported services, is dismissible, and can be switched off entirely per content type in the settings. On a service you have told it you subscribe to, it stays hidden, because there is nothing to switch away from.
 
-### Permissions justification — storage
+### Permissions justification — storage *(415/1000 chars)*
 
-Stores the user's own settings: which music services they subscribe to, whether the bar should appear for albums, tracks and artists, the storefront country, and which bars they have dismissed. Settings use synced storage so they follow the user's Chrome profile; dismissals are discarded when the browser closes. No browsing history or page content is stored.
+Stores the user's own settings: which streaming services they subscribe to, whether the bar should appear for albums, tracks and artists, the storefront country, and which bars they have dismissed. Settings use storage.sync so they follow the user's Chrome profile. Dismissals and cached catalogue lookups use storage.session and are discarded when the browser closes. No browsing history or page content is stored.
 
-### Permissions justification — host permissions
+### Permissions justification — host permissions *(976/1000 chars)*
 
-itunes.apple.com and api.deezer.com are Apple's and Deezer's public catalogue searches. The artist name and release title read from the current page are sent to them to find the matching release, so the Apple Music and Deezer buttons can link directly to it instead of to a search. Nothing else is sent, and no other host is contacted.
+The dashboard exposes **one** field here, not one per host. It covers all 20
+match patterns — the 2 in `host_permissions` and the 18 in `content_scripts`
+together — so the text has to account for every one of them. Explaining only
+the two catalogue APIs leaves the 18 that actually trigger the "may need
+in-depth review" warning unaddressed.
 
-### Permissions justification — content script hosts
+The extension's single function is to link a music release to the same release on another service. That needs exactly two things from the page: the artist name and the release title.
 
-open.spotify.com, music.apple.com, music.youtube.com, tidal.com, listen.tidal.com, www.deezer.com and the Amazon Music storefronts.
+Music service hosts (open.spotify.com, music.apple.com, music.youtube.com, tidal.com, listen.tidal.com, www.deezer.com and the music.amazon storefronts) are the six services supported. On album, track and artist pages it reads only the artist and title and adds one dismissible bar of links. It changes nothing else, injects no advertising, and runs on no other website. Access must be automatic rather than click-triggered, because the bar has to be there when the page loads.
 
-The extension has to read the artist name and release title from the page the user is looking at in order to find that same release on another service. That is the entire feature. Access is limited to these six music streaming services; the extension does not run on any other website, and it reads nothing from the page beyond the artist and title.
+Catalogue hosts (itunes.apple.com, api.deezer.com) are Apple's and Deezer's public catalogue searches. The artist and title are sent there to find the matching release, so those two buttons link straight to it instead of to a search. No other host is contacted, and no identifier or browsing history is ever sent.
 
 ### Remote code
 
