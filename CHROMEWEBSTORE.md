@@ -192,6 +192,28 @@ Music service hosts (open.spotify.com, music.apple.com, music.youtube.com, tidal
 
 Catalogue hosts (itunes.apple.com, api.deezer.com) are Apple's and Deezer's public catalogue searches. The artist and title are sent there to find the matching release, so those two buttons link straight to it instead of to a search. No other host is contacted, and no identifier or browsing history is ever sent.
 
+### Test instructions (Testanvisningar)
+
+**Username / Password: leave both empty.** The extension has no accounts, and
+album pages on the supported services are viewable signed out — verified with
+both the Spotify and Deezer test URLs returning 200 without a session. Never put
+a real personal login in this form.
+
+The additional-instructions field matters more here than for most extensions:
+the bar shows nothing until services are ticked, so a reviewer who installs it
+and opens Spotify sees an extension that appears to do nothing.
+
+**Additional instructions** *(500/500 chars)*
+
+No account or sign-in is needed, for the extension or for the streaming services. Album pages are publicly viewable.
+
+1. Install. The settings page opens by itself.
+2. Tick Apple Music and Deezer under "Services I subscribe to". Nothing appears until at least one is ticked.
+3. Open https://open.spotify.com/album/5vkqYmiPBYLaalcmjujWxK
+4. A bar appears at the top with Apple Music and Deezer buttons.
+
+By design no bar appears on a ticked service, so do not test on Apple Music or Deezer themselves.
+
 ### Remote code
 
 Select **"No, I am not using remote code."**
