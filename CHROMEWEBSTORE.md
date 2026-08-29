@@ -88,9 +88,10 @@ All generated assets live in `store-assets/` and are rebuilt with
 | Asset | Dimensions | Status | Filename |
 |-------|-----------|--------|----------|
 | Store Icon [REQUIRED] | 128×128 PNG | ✅ Ready | `store-assets/store-icon-128x128.png` |
-| Screenshot 1 [REQUIRED] | 1280×800 | ✅ Uploaded | `store-assets/screenshot-1-album-bar.png` |
-| Screenshot 2 [RECOMMENDED] | 1280×800 | ✅ Uploaded | `store-assets/screenshot-2-settings.png` |
-| Screenshot 3 [RECOMMENDED] | 1280×800 | ✅ Uploaded | `store-assets/screenshot-3-artist-bar.png` |
+| Screenshot 1 [REQUIRED] | 1280×800 | ✅ Uploaded | `store-assets/screenshot-1-settings.png` |
+| Screenshot 2 | 1280×800 | ✅ Uploaded | `store-assets/screenshot-2-Spotify.png` |
+| Screenshot 3 | 1280×800 | ✅ Uploaded | `store-assets/screenshot-3-AppleMusic.png` |
+| Screenshot 4 | 1280×800 | ✅ Uploaded | `store-assets/screenshot-4-YTMusic.png` |
 | Small Promo Tile [RECOMMENDED] | 440×280 | ✅ Ready | `store-assets/promo-small-440x280.png` |
 | Marquee Promo Tile | 1400×560 | ✅ Ready | `store-assets/promo-marquee-1400x560.png` |
 
@@ -115,10 +116,16 @@ type 1280 × 800 → capture screenshot from the ⋮ menu.
 
 Retake all of them whenever the bar's layout changes.
 
-Keep the submitted files in `store-assets/` under the names in the table above,
-so each release ships with the screenshots that document it. Check them with:
+Keep the submitted files in `store-assets/`, named after what they show, so each
+release ships with the screenshots that document it. Verify sizes with:
 
     python3 tools/check-store-assets.py
+
+**For the next version, lead with the bar rather than the settings.** The store
+shows the first screenshot first and largest, and the guidance is to show the
+extension in action. `screenshot-2-Spotify.png` is the stronger opener: it shows
+the whole product in one frame, with both "exact" and "search" buttons visible.
+Reordering means re-submitting the listing, so it is not worth doing mid-review.
 
 ## Permissions Justification
 
@@ -326,11 +333,18 @@ listing file can leak into a submission.
   like `absolute`. All six target services are app shells where inner containers
   scroll, so it does not surface there — but it is the reason the technique is
   scoped to these six sites.
-- **Not yet verified on the live services.** The matching logic has 45 automated
-  tests against the real catalogue APIs, and the bar has been verified against a
-  page that reproduces the app-shell layout, but the extension has not been
-  exercised end to end while signed in to all six services. This should be done
-  before submission — screenshots require it anyway.
+- **Verified live on three of six services.** Taking the screenshots exercised
+  the extension on real Spotify, Apple Music and YouTube Music pages. TIDAL,
+  Deezer and Amazon Music have not been confirmed as *source* pages, though all
+  six work as destinations in the automated tests.
+
+  Three things the Spotify screenshot confirms that had only been tested
+  indirectly: edition normalisation works in production — an album titled
+  "x (Deluxe Edition)" resolved to "exact" on both Apple Music and Deezer, which
+  is precisely the case that returned no results before the search term was
+  normalised; the bar pushes the page down without covering Spotify's own header;
+  and it all works while signed out, which is what the reviewer test instructions
+  assume.
 
 ### What to expect from this review
 
