@@ -1,8 +1,10 @@
 # Chrome Web Store Listing — OpenMusicIn
 
 > Last Updated: 2026-08-29
-> Version: 0.9.0 submitted; 0.9.1 ready locally with an Apple Music layout fix.
+> Version: 0.9.1 — submitted, Unlisted, listed in English and Swedish.
 > Status: **submitted for review 2026-08-29.** Awaiting the outcome.
+> 0.9.0 was cancelled before review completed, to avoid shipping the Apple
+> Music layout bug.
 > Expect a longer wait than usual: the dashboard warned that the twenty host
 > match patterns trigger an in-depth review.
 
@@ -82,10 +84,13 @@ English (Swedish also supplied via `_locales`)
 
 ## Swedish listing (sv locale)
 
+✅ Live in the dashboard alongside the English listing, from 0.9.1.
+
 The dashboard offers a language dropdown at the top of Store listing, with one
-entry per `_locales/` directory the extension ships — so Swedish is added
-alongside English rather than replacing it. Screenshots can be localised too;
-the English ones stand until Swedish captures exist.
+entry per `_locales/` directory the extension ships — so Swedish sits alongside
+English rather than replacing it. Screenshots can be localised too; the English
+captures currently serve both. Taking Swedish ones means switching Arc back to
+Swedish first.
 
 The button labels below are the ones the Swedish interface actually renders
 ("exakt", "sök"), not translations of the English labels. A description that
@@ -377,8 +382,8 @@ listing file can leak into a submission.
 
 | Version | Date | Changes | Status |
 |---------|------|---------|--------|
-| 0.9.1 | 2026-08-29 | Fixes the bar hiding Apple Music's own bottom banner. Shrinking the root element does not reach a layout sized with viewport units, so viewport-height elements are now measured and shrunk too. Not yet uploaded. | Draft |
-| 0.9.0 | 2026-08-29 | Submitted for review. Lookup cache moved to session storage so it survives service-worker restarts; message handling converted to async/await; short description brought under the 132-character limit; banner pins its own colour scheme; Chrome Sync declared as off-device transmission; store assets, privacy policy page and this listing document added. | **Submitted 2026-08-29** — in review |
+| 0.9.1 | 2026-08-29 | Fixes the bar hiding Apple Music's own bottom banner. Shrinking the root element does not reach a layout sized with viewport units, so viewport-height elements are now measured and shrunk too. Replaces the cancelled 0.9.0. | Cancelled — superseded by 0.9.1 |
+| 0.9.0 | 2026-08-29 | Submitted, then review cancelled before it completed. Lookup cache moved to session storage so it survives service-worker restarts; message handling converted to async/await; short description brought under the 132-character limit; banner pins its own colour scheme; Chrome Sync declared as off-device transmission; store assets, privacy policy page and this listing document added. | **Submitted 2026-08-29** — in review |
 | 0.1.0 | 2026-08-29 | First build, never submitted. Six services, album/track/artist detection, direct links for Apple Music and Deezer, search fallback elsewhere, subscription-aware settings, English and Swedish. | Superseded |
 
 ## Review Notes
