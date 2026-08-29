@@ -59,7 +59,7 @@ SUPPORT
 Bugs and suggestions: https://github.com/bastiman85/OpenMusicIn/issues
 Email: openmusicin@bastiman.nu
 
-Version 0.9.0 — First release.
+Version 0.9.1 — First release.
 
 **Category** [REQUIRED]
 Entertainment
@@ -79,6 +79,68 @@ The longer version required by the dashboard's Privacy practices tab is under
 
 **Primary Language** [REQUIRED]
 English (Swedish also supplied via `_locales`)
+
+## Swedish listing (sv locale)
+
+The dashboard offers a language dropdown at the top of Store listing, with one
+entry per `_locales/` directory the extension ships — so Swedish is added
+alongside English rather than replacing it. Screenshots can be localised too;
+the English ones stand until Swedish captures exist.
+
+The button labels below are the ones the Swedish interface actually renders
+("exakt", "sök"), not translations of the English labels. A description that
+names labels the user cannot find is worse than no description.
+
+**Kort beskrivning** *(102/132 tecken)*
+
+Hoppa från ett album, en låt eller en artist till samma utgåva på de musiktjänster du prenumererar på.
+
+**Detaljerad beskrivning**
+
+OpenMusicIn lägger en rad högst upp på album-, låt- och artistsidor så att du kan öppna samma utgåva på de musiktjänster du faktiskt prenumererar på.
+
+Hittade du ett album på en tjänst du inte betalar för? Ett klick tar dig dit på den du har.
+
+FUNKTIONER
+• Fungerar på Spotify, Apple Music, YouTube Music, TIDAL, Deezer och Amazon Music — både som sidan du utgår från och som stället du hamnar på.
+• Känner igen album, låtar och artister. Stäng av vilken som av de tre om du bara vill ha en.
+• Varje knapp säger vad den kommer att göra: "exakt" öppnar rätt utgåva direkt, "sök" öppnar en sökning som redan är ifylld med artist och titel.
+• Ange vilka tjänster du prenumererar på så håller sig tillägget undan — ingen rad på en tjänst du redan betalar för, och den föreslår aldrig en tjänst du saknar konto på.
+• Raden skjuter ner sidan i stället för att täcka den, så tjänstens egna menyer och spelare går fortfarande att använda.
+• Stäng den för en utgåva du inte är intresserad av.
+• Omsorgsfull matchning. Utgåvetillägg som "(Deluxe Edition)" eller "- 2011 Remaster" ignoreras vid uppslagningen, men en live- eller demoinspelning presenteras aldrig som studioalbumet. När träffen inte är övertygande får du en sökning i stället för en felaktig länk.
+• Dina inställningar följer med till dina andra datorer.
+• Finns på svenska och engelska.
+
+SÅ ANVÄNDER DU DET
+1. Installera tillägget. Inställningarna öppnas av sig själva första gången.
+2. Kryssa i de musiktjänster du prenumererar på. Ingenting visas förrän du gjort det.
+3. Öppna en album-, låt- eller artistsida på någon av de sex tjänsterna.
+4. Klicka på den tjänst du vill ha i raden högst upp. Den öppnas i en ny flik.
+5. Klicka på tilläggets ikon i verktygsfältet för att ta tillbaka en rad du stängt.
+
+VARFÖR VISSA KNAPPAR SÄGER "SÖK"
+Apple Music och Deezer låter vem som helst slå upp en utgåva, så de knapparna går direkt dit. Spotify, TIDAL, YouTube Music och Amazon Music erbjuder ingen sådan väg in, så de knapparna öppnar en sökning med artist och titel redan ifyllda. Etiketten på varje knapp talar om vilket du får, varje gång.
+
+INTEGRITET
+Inga konton, ingen analys, ingen spårning och ingen egen server. Ingenting om dig samlas in.
+
+För att hitta en matchande utgåva skickas artistnamnet och titeln som visas på sidan till Apples och Deezers publika katalogsökningar. Det är allt som skickas, och det skickas ingen annanstans. Ingen historik över vilka sidor du besöker sparas.
+
+Dina inställningar förvaras av Chrome och bärs mellan dina egna datorer av Chromes egen synkronisering, under ditt Google-konto. Vi får dem aldrig.
+
+Fullständig policy: https://bastiman85.github.io/OpenMusicIn/privacy.html
+
+BEHÖRIGHETER
+• "Läsa dina data på de sex musiktjänsterna" — tillägget måste läsa artist- och albumnamn från sidan du är på för att kunna hitta utgåvan någon annanstans. Det läser ingenting annat, och det körs inte på någon annan webbplats.
+• "Läsa dina data på itunes.apple.com och api.deezer.com" — det är de två katalogsökningar som används för att hitta en matchande utgåva.
+• "Lagring" — kommer ihåg vilka tjänster du prenumererar på, dina visningsval och vilka rader du stängt.
+
+SUPPORT
+Buggar och förslag: https://github.com/bastiman85/OpenMusicIn/issues
+E-post: openmusicin@bastiman.nu
+
+Version 0.9.1 — Första utgåvan.
 
 ## Graphics & Assets
 
