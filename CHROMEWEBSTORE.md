@@ -2,8 +2,9 @@
 
 > Last Updated: 2026-08-29
 > Version: 0.9.0 — first submission, Unlisted.
-> Status: not yet submitted. One blocker remains: the three screenshots.
-> Everything else on this page is done, privacy policy included and live.
+> Status: **submitted for review 2026-08-29.** Awaiting the outcome.
+> Expect a longer wait than usual: the dashboard warned that the twenty host
+> match patterns trigger an in-depth review.
 
 ## Store Listing
 
@@ -87,9 +88,9 @@ All generated assets live in `store-assets/` and are rebuilt with
 | Asset | Dimensions | Status | Filename |
 |-------|-----------|--------|----------|
 | Store Icon [REQUIRED] | 128×128 PNG | ✅ Ready | `store-assets/store-icon-128x128.png` |
-| Screenshot 1 [REQUIRED] | 1280×800 | ⬜ Must be captured by hand | — |
-| Screenshot 2 [RECOMMENDED] | 1280×800 | ⬜ Must be captured by hand | — |
-| Screenshot 3 [RECOMMENDED] | 1280×800 | ⬜ Must be captured by hand | — |
+| Screenshot 1 [REQUIRED] | 1280×800 | ✅ Uploaded to the dashboard | not in repo |
+| Screenshot 2 [RECOMMENDED] | 1280×800 | ✅ Uploaded to the dashboard | not in repo |
+| Screenshot 3 [RECOMMENDED] | 1280×800 | ✅ Uploaded to the dashboard | not in repo |
 | Small Promo Tile [RECOMMENDED] | 440×280 | ✅ Ready | `store-assets/promo-small-440x280.png` |
 | Marquee Promo Tile | 1400×560 | ✅ Ready | `store-assets/promo-marquee-1400x560.png` |
 
@@ -113,6 +114,10 @@ type 1280 × 800 → capture screenshot from the ⋮ menu.
 3. **The bar on an artist page**, to show it is not only albums.
 
 Retake all of them whenever the bar's layout changes.
+
+The submitted screenshots live only in the Developer Dashboard. Copying them
+into `store-assets/` would make them reproducible alongside the version they
+document — worth doing before the next release.
 
 ## Permissions Justification
 
@@ -299,7 +304,7 @@ listing file can leak into a submission.
 
 | Version | Date | Changes | Status |
 |---------|------|---------|--------|
-| 0.9.0 | 2026-08-29 | Prepared for submission. Lookup cache moved to session storage so it survives service-worker restarts; message handling converted to async/await; short description brought under the 132-character limit; banner pins its own colour scheme; Chrome Sync declared as off-device transmission; store assets, privacy policy page and this listing document added. | Draft — ready to submit once the screenshots exist |
+| 0.9.0 | 2026-08-29 | Submitted for review. Lookup cache moved to session storage so it survives service-worker restarts; message handling converted to async/await; short description brought under the 132-character limit; banner pins its own colour scheme; Chrome Sync declared as off-device transmission; store assets, privacy policy page and this listing document added. | **Submitted 2026-08-29** — in review |
 | 0.1.0 | 2026-08-29 | First build, never submitted. Six services, album/track/artist detection, direct links for Apple Music and Deezer, search fallback elsewhere, subscription-aware settings, English and Swedish. | Superseded |
 
 ## Review Notes
@@ -326,6 +331,27 @@ listing file can leak into a submission.
   exercised end to end while signed in to all six services. This should be done
   before submission — screenshots require it anyway.
 
+### What to expect from this review
+
+The in-depth review warning was raised by the twenty host match patterns, not by
+anything specific that is wrong. Reviews of this kind commonly take longer than
+the usual few days.
+
+If it comes back rejected, the three most likely grounds given what this
+extension does, and the answer to each:
+
+1. **Host permission breadth.** Twelve of the twenty patterns are Amazon Music
+   storefronts. Dropping Amazon Music removes 60% of the host surface and costs
+   one search-only button for a service with no Swedish storefront. That is the
+   single largest concession available without changing what the extension does.
+2. **Single purpose, because of the persistent bar.** The justification already
+   states that the bar is dismissible, appears only on release pages of six
+   named services, and can be switched off per content type. Point at that.
+3. **Data use mismatch.** The disclosure declares website content (artist and
+   title to the two catalogue APIs) and user activity (settings via Chrome Sync).
+   Both are what the code does. If a reviewer disputes it, the privacy policy at
+   the URL on file says the same thing in the same terms.
+
 ### Rejection History
 
-None — not yet submitted.
+None so far.
