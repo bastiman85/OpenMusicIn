@@ -70,7 +70,11 @@ no longer exists; the closest current alternative, Functionality & UI, is for ta
 and shortcut managers and would put this in front of the wrong audience.
 
 **Single Purpose** [REQUIRED]
-Links an album, track or artist page on one music streaming service to the same release on other music streaming services.
+Links an album, track or artist page on one music streaming service to the same
+release on other music streaming services.
+
+The longer version required by the dashboard's Privacy practices tab is under
+"Privacy Practices Tab — exact field texts" below.
 
 **Primary Language** [REQUIRED]
 English (Swedish also supplied via `_locales`)
@@ -157,6 +161,54 @@ it, so it is declared below rather than described as purely local.
 - [x] Data is NOT sold to third parties
 - [x] Data is NOT used for purposes unrelated to the extension's core functionality
 - [x] Data is NOT used for creditworthiness or lending purposes
+
+## Privacy Practices Tab — exact field texts
+
+The Developer Dashboard blocks publishing until these are filled in. Paste each
+one verbatim; they are written to match what the code actually does, because a
+disagreement between these answers and the extension's behaviour is a rejection.
+
+### Single purpose description
+
+OpenMusicIn has one function: when you are looking at an album, track or artist page on a supported music streaming service, it shows a bar linking to the same release on the other services you subscribe to.
+
+That is all it does. It does not inject advertising, does not modify the page's own content, does not change your search settings, and does not add unrelated features. The bar appears only on release pages of the six supported services, is dismissible, and can be switched off entirely per content type in the settings. On a service you have told it you subscribe to, it stays hidden, because there is nothing to switch away from.
+
+### Permissions justification — storage
+
+Stores the user's own settings: which music services they subscribe to, whether the bar should appear for albums, tracks and artists, the storefront country, and which bars they have dismissed. Settings use synced storage so they follow the user's Chrome profile; dismissals are discarded when the browser closes. No browsing history or page content is stored.
+
+### Permissions justification — host permissions
+
+itunes.apple.com and api.deezer.com are Apple's and Deezer's public catalogue searches. The artist name and release title read from the current page are sent to them to find the matching release, so the Apple Music and Deezer buttons can link directly to it instead of to a search. Nothing else is sent, and no other host is contacted.
+
+### Permissions justification — content script hosts
+
+open.spotify.com, music.apple.com, music.youtube.com, tidal.com, listen.tidal.com, www.deezer.com and the Amazon Music storefronts.
+
+The extension has to read the artist name and release title from the page the user is looking at in order to find that same release on another service. That is the entire feature. Access is limited to these six music streaming services; the extension does not run on any other website, and it reads nothing from the page beyond the artist and title.
+
+### Remote code
+
+Select **"No, I am not using remote code."**
+
+All JavaScript is contained in the uploaded package. Nothing is fetched and executed at runtime. The only network requests are catalogue searches to itunes.apple.com and api.deezer.com, whose JSON responses are read as data — never evaluated as code.
+
+### Data use certification
+
+Tick all three:
+- Data is not being sold to third parties, outside of approved use cases
+- Data is not being used or transferred for purposes unrelated to the item's single purpose
+- Data is not being used or transferred to determine creditworthiness or for lending purposes
+
+Disclose under **Website content**: the artist name and release title are read
+from the page and sent to the two catalogue APIs to find a matching release.
+
+Disclose under **User activity** *(settings only)*: the user's chosen services
+and display preferences are carried between their own devices by Chrome Sync,
+under their own Google account. The developer never receives them.
+
+Everything else: not collected.
 
 ## Privacy Policy
 
