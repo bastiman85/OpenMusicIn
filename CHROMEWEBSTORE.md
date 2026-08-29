@@ -88,10 +88,13 @@ All generated assets live in `store-assets/` and are rebuilt with
 | Asset | Dimensions | Status | Filename |
 |-------|-----------|--------|----------|
 | Store Icon [REQUIRED] | 128×128 PNG | ✅ Ready | `store-assets/store-icon-128x128.png` |
-| Screenshot 1 [REQUIRED] | 1280×800 | ✅ Uploaded | `store-assets/screenshot-1-settings.png` |
-| Screenshot 2 | 1280×800 | ✅ Uploaded | `store-assets/screenshot-2-Spotify.png` |
-| Screenshot 3 | 1280×800 | ✅ Uploaded | `store-assets/screenshot-3-AppleMusic.png` |
-| Screenshot 4 | 1280×800 | ✅ Uploaded | `store-assets/screenshot-4-YTMusic.png` |
+| Screenshot 1 [REQUIRED] | 1280×800 | ✅ Uploaded | `store-assets/screenshot-1-Spotify.png` |
+| Screenshot 2 | 1280×800 | ✅ Uploaded | `store-assets/screenshot-2-AppleMusic.png` |
+| Screenshot 3 | 1280×800 | ✅ Uploaded | `store-assets/screenshot-3-YTMusic.png` |
+| Screenshot 4 | 1280×800 | ✅ Uploaded | `store-assets/screenshot-4-settings.png` |
+
+Filenames mirror the order they were uploaded in, which is the order the store
+displays them.
 | Small Promo Tile [RECOMMENDED] | 440×280 | ✅ Ready | `store-assets/promo-small-440x280.png` |
 | Marquee Promo Tile | 1400×560 | ✅ Ready | `store-assets/promo-marquee-1400x560.png` |
 
@@ -121,11 +124,11 @@ release ships with the screenshots that document it. Verify sizes with:
 
     python3 tools/check-store-assets.py
 
-**For the next version, lead with the bar rather than the settings.** The store
-shows the first screenshot first and largest, and the guidance is to show the
-extension in action. `screenshot-2-Spotify.png` is the stronger opener: it shows
-the whole product in one frame, with both "exact" and "search" buttons visible.
-Reordering means re-submitting the listing, so it is not worth doing mid-review.
+The listing leads with the bar on a real Spotify album page — the whole product
+in one frame, with both "exact" and "search" buttons visible — and keeps the
+settings page last. That is the right order: the store shows the first
+screenshot largest, and the guidance is to show the extension in action rather
+than its configuration.
 
 ## Permissions Justification
 
