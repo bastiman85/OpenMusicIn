@@ -10,27 +10,64 @@
 **Extension Name** [REQUIRED]
 OpenMusicIn
 
-**Short Description** [REQUIRED] *(113 chars)*
-Open an album, track or artist on one streaming service and jump straight to it on the services you subscribe to.
+**Short Description** [REQUIRED] *(104 chars)*
+Jump from an album, track or artist to the same release on the music services you actually subscribe to.
 
 **Detailed Description** [REQUIRED]
 
-Found an album on the wrong streaming service? OpenMusicIn puts a bar at the top of the page with a button for each service you actually subscribe to.
+OpenMusicIn puts a bar at the top of album, track and artist pages so you can open the same release on the music services you actually subscribe to.
 
-It works on album, track and artist pages across Spotify, Apple Music, YouTube Music, TIDAL, Deezer and Amazon Music. For Apple Music and Deezer the button takes you straight to the matching release. For the other four it opens a search already filled in with the artist and title, because those services do not offer a public way to look a release up.
+Found an album on a service you do not pay for? One click takes you to it on the one you do.
 
-Every button is labelled so you know which one you are getting: "exact" for a direct link, "search" for a search.
+FEATURES
+• Works on Spotify, Apple Music, YouTube Music, TIDAL, Deezer and Amazon Music — as both the page you start from and the place you end up.
+• Recognises albums, tracks and artists. Turn any of the three off if you only want one.
+• Every button says what it will do: "exact" opens the matching release directly, "search" opens a search already filled in with the artist and title.
+• Tell it which services you subscribe to and it stays out of your way — no bar on a service you already pay for, and it never offers one you have no account on.
+• The bar pushes the page down instead of covering it, so the site's own menus and player stay usable.
+• Dismiss it for any release you are not interested in.
+• Careful matching. Edition suffixes such as "(Deluxe Edition)" or "- 2011 Remaster" are ignored when looking a release up, but a live or demo recording is never passed off as the studio album. When the match is not convincing, you get a search rather than a wrong link.
+• Your settings follow you to your other computers.
+• Available in English and Swedish.
 
-Tell it which services you subscribe to and it stays out of your way: no bar on a service you already pay for, and it never suggests a service you have no account on. You can also choose whether it appears for albums, tracks, artists, or only some of those. The bar pushes the page down rather than covering it, so the site's own navigation and player stay usable, and you can dismiss it for any release you are not interested in.
+HOW TO USE
+1. Install the extension. The settings open by themselves the first time.
+2. Tick the music services you subscribe to. Nothing appears until you do.
+3. Open any album, track or artist page on one of the six services.
+4. Click the service you want in the bar at the top. It opens in a new tab.
+5. Click the extension icon in the toolbar to bring a dismissed bar back.
 
-Matching is careful on purpose. Edition suffixes like "(Deluxe Edition)" or "- 2011 Remaster" are ignored when searching, but a live or demo recording is never presented as the studio release. When the match is not good enough, you get a search instead of a wrong link.
+WHY SOME BUTTONS SAY "SEARCH"
+Apple Music and Deezer let anyone look a release up, so those buttons go straight to it. Spotify, TIDAL, YouTube Music and Amazon Music offer no such way in, so those buttons open a search with the artist and title already typed for you. The label on each button tells you which you are getting, every time.
 
-The artist and title read from the page are sent only to Apple's and Deezer's public catalogue services, and only to look up a match. Nothing else leaves your browser, and no browsing history is stored.
+PRIVACY
+No accounts, no analytics, no tracking, and no server of our own. Nothing about you is collected.
 
-Settings sync across the Chrome profiles you are signed in to. Interface available in English and Swedish.
+To find a matching release, the artist name and title shown on the page are sent to Apple's and Deezer's public catalogue searches. That is all that is sent, and it is sent nowhere else. No record is kept of the pages you visit.
+
+Your settings are held by Chrome and carried between your own computers by Chrome's own sync, under your Google account. We never receive them.
+
+Full policy: https://bastiman85.github.io/OpenMusicIn/privacy.html
+
+PERMISSIONS
+• "Read your data on the six music services" — the extension has to read the artist and album name from the page you are on in order to find that release elsewhere. It reads nothing else, and it runs on no other website.
+• "Read your data on itunes.apple.com and api.deezer.com" — these are the two catalogue searches used to find a matching release.
+• "Storage" — remembers which services you subscribe to, your display choices, and which bars you have dismissed.
+
+SUPPORT
+Bugs and suggestions: https://github.com/bastiman85/OpenMusicIn/issues
+Email: openmusicin@bastiman.nu
+
+Version 0.9.0 — First release.
 
 **Category** [REQUIRED]
-Productivity
+Entertainment
+
+Google's own definition: "These extensions are designed for fans of sports,
+music, television, and cinema." Music is named outright, and that is who this is
+for. Note that the pre-2023 category list — the one where "Productivity" lived —
+no longer exists; the closest current alternative, Functionality & UI, is for tab
+and shortcut managers and would put this in front of the wrong audience.
 
 **Single Purpose** [REQUIRED]
 Links an album, track or artist page on one music streaming service to the same release on other music streaming services.
