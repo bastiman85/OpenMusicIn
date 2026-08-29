@@ -3,7 +3,7 @@
 > Last Updated: 2026-08-29
 > Version: 0.9.0 — first submission, Unlisted.
 > Status: not yet submitted. One blocker remains: the three screenshots.
-> Everything else on this page is done.
+> Everything else on this page is done, privacy policy included and live.
 
 ## Store Listing
 
@@ -123,7 +123,7 @@ it, so it is declared below rather than described as purely local.
 
 ## Privacy Policy
 
-**Privacy Policy URL** [REQUIRED] — ⬜ written and built, not yet hosted.
+**Privacy Policy URL** [REQUIRED] — ✅ live at <https://bastiman85.github.io/OpenMusicIn/privacy.html>
 
 `PRIVACY.md` is the source; `docs/privacy.html` is the page to publish, built
 from it with `python3 tools/build-privacy-page.py`. It is generated rather than
@@ -131,10 +131,15 @@ hand-written so the hosted policy cannot drift from the repository copy — and
 so it cannot drift from the data-use table above, which is a documented
 rejection reason.
 
-To host: push this repository to GitHub, then enable Pages with the source set
-to the `docs/` folder on the default branch. The policy is then live at
-`https://<user>.github.io/<repo>/privacy.html`. Enter that URL here and in the
-dashboard, and open it once yourself to confirm it loads — reviewers do.
+Hosted with GitHub Pages from the `docs/` folder on `main` of https://github.com/bastiman85/OpenMusicIn.
+Note that Pages is not available for private repositories on GitHub's free
+plan — this repository is public for that reason.
+
+Rebuild and republish after any change to `PRIVACY.md`:
+
+    python3 tools/build-privacy-page.py && git commit -am "Update privacy policy" && git push
+
+Pages redeploys on push. Open the URL yourself after any change — reviewers do.
 
 ## Distribution
 
@@ -159,10 +164,10 @@ on the listing and is therefore scrapeable. Google also sends takedown and
 policy notices here, so it must stay monitored — confirm it actually receives
 mail before submitting.
 
-**Support URL / Email** [RECOMMENDED] — GitHub Issues on this repository, once it
-is pushed to a remote. That happens anyway to host the privacy policy.
+**Support URL / Email** [RECOMMENDED] — https://github.com/bastiman85/OpenMusicIn/issues
 
-**Homepage URL** [RECOMMENDED] — none.
+**Homepage URL** [RECOMMENDED] — https://github.com/bastiman85/OpenMusicIn
+
 
 A one-time USD 5 developer registration fee is payable to Google before the
 first submission.

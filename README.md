@@ -125,6 +125,10 @@ text via `_locales` (engelska som standard, svenska följer webbläsarspråket).
 Skriptet lägger en zip i `dist/` med `test/`, `tools/`, `dist/`, `.claude/` och
 `README.md` uteslutna.
 
+Integritetspolicyn ligger publikt på <https://bastiman85.github.io/OpenMusicIn/privacy.html>, serverad av GitHub Pages ur
+`docs/` på `main`. Kör `python3 tools/build-privacy-page.py` och pusha efter
+varje ändring i `PRIVACY.md` — Pages bygger om vid push.
+
 Butiksmaterial genereras med `python3 tools/make-store-assets.py` till
 `store-assets/`, och den publicerbara integritetspolicyn med
 `python3 tools/build-privacy-page.py` till `docs/privacy.html`.
