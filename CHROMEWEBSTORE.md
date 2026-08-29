@@ -88,9 +88,9 @@ All generated assets live in `store-assets/` and are rebuilt with
 | Asset | Dimensions | Status | Filename |
 |-------|-----------|--------|----------|
 | Store Icon [REQUIRED] | 128×128 PNG | ✅ Ready | `store-assets/store-icon-128x128.png` |
-| Screenshot 1 [REQUIRED] | 1280×800 | ✅ Uploaded to the dashboard | not in repo |
-| Screenshot 2 [RECOMMENDED] | 1280×800 | ✅ Uploaded to the dashboard | not in repo |
-| Screenshot 3 [RECOMMENDED] | 1280×800 | ✅ Uploaded to the dashboard | not in repo |
+| Screenshot 1 [REQUIRED] | 1280×800 | ✅ Uploaded | `store-assets/screenshot-1-album-bar.png` |
+| Screenshot 2 [RECOMMENDED] | 1280×800 | ✅ Uploaded | `store-assets/screenshot-2-settings.png` |
+| Screenshot 3 [RECOMMENDED] | 1280×800 | ✅ Uploaded | `store-assets/screenshot-3-artist-bar.png` |
 | Small Promo Tile [RECOMMENDED] | 440×280 | ✅ Ready | `store-assets/promo-small-440x280.png` |
 | Marquee Promo Tile | 1400×560 | ✅ Ready | `store-assets/promo-marquee-1400x560.png` |
 
@@ -115,9 +115,10 @@ type 1280 × 800 → capture screenshot from the ⋮ menu.
 
 Retake all of them whenever the bar's layout changes.
 
-The submitted screenshots live only in the Developer Dashboard. Copying them
-into `store-assets/` would make them reproducible alongside the version they
-document — worth doing before the next release.
+Keep the submitted files in `store-assets/` under the names in the table above,
+so each release ships with the screenshots that document it. Check them with:
+
+    python3 tools/check-store-assets.py
 
 ## Permissions Justification
 
