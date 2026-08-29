@@ -382,8 +382,8 @@ listing file can leak into a submission.
 
 | Version | Date | Changes | Status |
 |---------|------|---------|--------|
-| 0.9.1 | 2026-08-29 | Fixes the bar hiding Apple Music's own bottom banner. Shrinking the root element does not reach a layout sized with viewport units, so viewport-height elements are now measured and shrunk too. Replaces the cancelled 0.9.0. | Cancelled — superseded by 0.9.1 |
-| 0.9.0 | 2026-08-29 | Submitted, then review cancelled before it completed. Lookup cache moved to session storage so it survives service-worker restarts; message handling converted to async/await; short description brought under the 132-character limit; banner pins its own colour scheme; Chrome Sync declared as off-device transmission; store assets, privacy policy page and this listing document added. | **Submitted 2026-08-29** — in review |
+| 0.9.1 | 2026-08-29 | Fixes the bar hiding Apple Music's own bottom banner. Shrinking the root element does not reach a layout sized with viewport units, so viewport-height elements are now measured and shrunk too. Replaces the cancelled 0.9.0. | **Submitted 2026-08-29** — in review |
+| 0.9.0 | 2026-08-29 | Submitted, then review cancelled before it completed. Lookup cache moved to session storage so it survives service-worker restarts; message handling converted to async/await; short description brought under the 132-character limit; banner pins its own colour scheme; Chrome Sync declared as off-device transmission; store assets, privacy policy page and this listing document added. | Cancelled — superseded by 0.9.1 |
 | 0.1.0 | 2026-08-29 | First build, never submitted. Six services, album/track/artist detection, direct links for Apple Music and Deezer, search fallback elsewhere, subscription-aware settings, English and Swedish. | Superseded |
 
 ## Review Notes
