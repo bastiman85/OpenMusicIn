@@ -1,7 +1,7 @@
 # Chrome Web Store Listing — OpenMusicIn
 
 > Last Updated: 2026-08-29
-> Version: 0.9.0 — first submission, Unlisted.
+> Version: 0.9.0 submitted; 0.9.1 ready locally with an Apple Music layout fix.
 > Status: **submitted for review 2026-08-29.** Awaiting the outcome.
 > Expect a longer wait than usual: the dashboard warned that the twenty host
 > match patterns trigger an in-depth review.
@@ -315,6 +315,7 @@ listing file can leak into a submission.
 
 | Version | Date | Changes | Status |
 |---------|------|---------|--------|
+| 0.9.1 | 2026-08-29 | Fixes the bar hiding Apple Music's own bottom banner. Shrinking the root element does not reach a layout sized with viewport units, so viewport-height elements are now measured and shrunk too. Not yet uploaded. | Draft |
 | 0.9.0 | 2026-08-29 | Submitted for review. Lookup cache moved to session storage so it survives service-worker restarts; message handling converted to async/await; short description brought under the 132-character limit; banner pins its own colour scheme; Chrome Sync declared as off-device transmission; store assets, privacy policy page and this listing document added. | **Submitted 2026-08-29** — in review |
 | 0.1.0 | 2026-08-29 | First build, never submitted. Six services, album/track/artist detection, direct links for Apple Music and Deezer, search fallback elsewhere, subscription-aware settings, English and Swedish. | Superseded |
 

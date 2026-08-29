@@ -166,6 +166,15 @@ utvecklarkontot.
   och tjänstens egen spelarlist med `bottom: 0` följer med ut ur bild. Det var
   precis vad som hände i YouTube Music när man startade en låt utan att öppna
   helskärmsvyn.
+- En `transform` på rotelementet når inte ättlingar som är dimensionerade med
+  `100vh` — viewport-enheter struntar i förfäderna. Apple Music bygger sitt skal
+  som ett viewporthögt rutnät vars sista rad är deras egen banner, så pushen
+  sköt den raden rakt ur bild trots att `html` krympte korrekt. Spotify och
+  YouTube Music visade aldrig detta eftersom deras chrome är `position: fixed`,
+  vilket transformen hanterar. Det finns ingen selektor för "satt med 100vh", så
+  tillägget mäter i stället: allt som är exakt viewporthögt markeras med
+  `data-omi-vh` innan transformen appliceras, och pushens stilmall drar av
+  bannerns höjd från dem.
 - Bieffekt av samma transform: på en sida där *dokumentet* scrollar beter sig
   `position: fixed` som `absolute` och följer med scrollen. Alla sex tjänsterna
   är app-skal där inre containrar scrollar och dokumentet står stilla, så det

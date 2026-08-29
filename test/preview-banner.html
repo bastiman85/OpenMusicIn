@@ -4,6 +4,13 @@
   /* App-shell layout, the way YouTube Music and Spotify are built. */
   html, body { height:100%; }
   body { margin:0; font:14px -apple-system,system-ui,sans-serif; background:#121212; color:#eee; }
+  /* Apple Music's shape: a 100vh grid whose last row is a normal-flow banner.
+     Nothing here is position:fixed, so shrinking <html> does not reach it —
+     this is the layout the first push fix silently broke. */
+  body.vh-shell .app-shell { display:grid; grid-template-rows:1fr auto; height:100vh; }
+  body.vh-shell .fake { overflow:auto; }
+  body.vh-shell .player { position:static; }
+  body:not(.vh-shell) .app-shell { display:contents; }
   /* Fixed player bar pinned to the bottom — the element that went missing. */
   .player { position:fixed; bottom:0; left:0; right:0; height:64px; background:#282828;
             border-top:1px solid #3a3a3a; display:flex; align-items:center; gap:14px;
@@ -22,6 +29,7 @@
   button { font:inherit; padding:8px 14px; border-radius:8px; border:1px solid #444; background:#222; color:#eee; cursor:pointer; }
 </style></head>
 <body>
+  <div class="app-shell">
   <nav class="sitenav"><b>MockMusic</b><a href="#">Hem</a><a href="#">Sök</a><a href="#">Bibliotek</a></nav>
   <div class="fake">
     <h1>In Rainbows</h1>
@@ -29,12 +37,14 @@
     <p>A mock streaming page, so the banner can be seen in context.</p>
   </div>
   <div class="player"><b>▶</b><span>Nude — Radiohead</span></div>
+  </div>
   <div class="controls">
     <button id="resolved">Resolved state</button>
     <button id="pending">Pending state</button>
     <button id="few">Two services only</button>
     <button id="hide">Dismiss (unpush)</button>
     <button id="probe">Probe</button>
+    <button id="vhshell">Toggle 100vh shell</button>
   </div>
 
   <script src="chrome-stub.js"></script>
@@ -84,6 +94,11 @@
                navTop: Math.round(n.top) };
     };
     document.getElementById('probe').onclick = () => console.log(JSON.stringify(window.probe()));
+    document.getElementById('vhshell').onclick = () => {
+      document.body.classList.toggle('vh-shell');
+      Banner.remove();               // re-measure against the new layout
+      show(all, 'resolved');
+    };
     show(all, 'resolved');
   });
   </script>

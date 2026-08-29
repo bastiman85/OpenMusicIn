@@ -117,6 +117,7 @@
   let barEl = null;
   let pushStyle = null;
   let resizeObs = null;
+  let vhMarked = [];
   let chipById = new Map();
   let handlers = {};
 
@@ -129,11 +130,43 @@
    * root element a transform makes it the containing block for those fixed
    * descendants, so the whole page — chrome included — moves down together.
    */
+  /*
+   * Shrinking <html> does not reach a descendant sized with 100vh — viewport
+   * units ignore the ancestor entirely. Apple Music lays its shell out as a
+   * viewport-height grid whose last row is the upsell banner, so the push moved
+   * that row straight off the bottom of the screen while html itself shrank
+   * correctly. Spotify and YouTube Music never showed this because their chrome
+   * is position:fixed, which the transform does handle.
+   *
+   * There is no selector for "sized with 100vh", so measure instead: anything
+   * exactly as tall as the viewport gets marked, and the push stylesheet takes
+   * the banner's height off it. Must run before the transform is applied, while
+   * the measurements still mean something.
+   */
+  function markViewportHeightElements() {
+    vhMarked = [];
+    const vh = window.innerHeight;
+    if (!vh || !document.body) return;
+    (function walk(el, depth) {
+      if (depth > 5) return;
+      for (const child of el.children) {
+        const rect = child.getBoundingClientRect();
+        // Width guard keeps narrow full-height rails, like sidebars, out of it.
+        if (Math.abs(rect.height - vh) < 1.5 && rect.width > 200) {
+          child.setAttribute('data-omi-vh', '');
+          vhMarked.push(child);
+        }
+        walk(child, depth + 1);
+      }
+    })(document.body, 0);
+  }
+
   function applyPush() {
     if (!barEl || !hostEl) return;
     const h = Math.ceil(barEl.getBoundingClientRect().height);
     if (!h) return;
     if (!pushStyle) {
+      markViewportHeightElements();
       pushStyle = document.createElement('style');
       pushStyle.id = 'openmusicin-push';
       (document.head || document.documentElement).appendChild(pushStyle);
@@ -147,7 +180,9 @@
     const css =
       ':root{transform:translateY(' + h + 'px)!important;' +
       'height:calc(100% - ' + h + 'px)!important;' +
-      'min-height:calc(100% - ' + h + 'px)!important;}';
+      'min-height:calc(100% - ' + h + 'px)!important;}' +
+      '[data-omi-vh]{height:calc(100vh - ' + h + 'px)!important;' +
+      'max-height:calc(100vh - ' + h + 'px)!important;}';
     if (pushStyle.textContent !== css) pushStyle.textContent = css;
     // Custom properties cross the shadow boundary, and `all: initial` on :host
     // does not reset them.
@@ -159,6 +194,8 @@
       resizeObs.disconnect();
       resizeObs = null;
     }
+    for (const el of vhMarked) el.removeAttribute('data-omi-vh');
+    vhMarked = [];
     if (pushStyle && pushStyle.parentNode) pushStyle.parentNode.removeChild(pushStyle);
     pushStyle = null;
   }
