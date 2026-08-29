@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title data-i18n="optionsTitle">OpenMusicIn</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="page">
+    <header class="head">
+      <div class="logo">♪</div>
+      <div>
+        <h1 data-i18n="extName">OpenMusicIn</h1>
+        <p class="sub" data-i18n="optionsTagline"></p>
+      </div>
+      <span class="saved" id="saved" data-i18n="saved" hidden></span>
+    </header>
+
+    <section class="card">
+      <h2 data-i18n="sectionSubscriptions"></h2>
+      <p class="hint" data-i18n="sectionSubscriptionsHint"></p>
+      <div class="services" id="services"></div>
+      <p class="warn" id="noSubsWarning" data-i18n="warnNoSubscriptions" hidden></p>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="sectionBehaviour"></h2>
+      <label class="row">
+        <input type="checkbox" id="enabled">
+        <span>
+          <strong data-i18n="optEnabled"></strong>
+          <em data-i18n="optEnabledHint"></em>
+        </span>
+      </label>
+      <label class="row">
+        <input type="checkbox" id="hideOnSubscribed">
+        <span>
+          <strong data-i18n="optHideOnSubscribed"></strong>
+          <em data-i18n="optHideOnSubscribedHint"></em>
+        </span>
+      </label>
+      <label class="row">
+        <input type="checkbox" id="onlySuggestSubscribed">
+        <span>
+          <strong data-i18n="optOnlySuggestSubscribed"></strong>
+          <em data-i18n="optOnlySuggestSubscribedHint"></em>
+        </span>
+      </label>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="sectionTypes"></h2>
+      <p class="hint" data-i18n="sectionTypesHint"></p>
+      <div class="types">
+        <label class="chip"><input type="checkbox" id="type-album"><span data-i18n="typeAlbum"></span></label>
+        <label class="chip"><input type="checkbox" id="type-track"><span data-i18n="typeTrack"></span></label>
+        <label class="chip"><input type="checkbox" id="type-artist"><span data-i18n="typeArtist"></span></label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="sectionRegion"></h2>
+      <p class="hint" data-i18n="sectionRegionHint"></p>
+      <select id="region"></select>
+    </section>
+
+    <section class="card note">
+      <h2 data-i18n="sectionHow"></h2>
+      <p data-i18n="howExact"></p>
+      <p data-i18n="howSearch"></p>
+      <p data-i18n="howPrivacy"></p>
+    </section>
+  </main>
+
+  <script src="../common/services.js"></script>
+  <script src="../common/settings.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

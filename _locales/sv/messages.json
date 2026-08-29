@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "OpenMusicIn"
+  },
+  "extDesc": {
+    "message": "Öppna ett album, en låt eller en artist på en tjänst och hoppa direkt dit på de tjänster du prenumererar på."
+  },
+  "actionTitle": {
+    "message": "OpenMusicIn — visa bannern igen"
+  },
+  "bannerOpenIn": {
+    "message": "Öppna i"
+  },
+  "kindMatch": {
+    "message": "exakt"
+  },
+  "kindSearch": {
+    "message": "sök"
+  },
+  "kindPending": {
+    "message": "söker…"
+  },
+  "tooltipMatch": {
+    "message": "Träff: $1 — $2"
+  },
+  "tooltipSearch": {
+    "message": "Tjänsten saknar publikt API — öppnar en sökning i stället"
+  },
+  "tooltipPending": {
+    "message": "Letar efter en exakt träff…"
+  },
+  "openSettings": {
+    "message": "Inställningar"
+  },
+  "dismiss": {
+    "message": "Stäng"
+  },
+  "optionsTitle": {
+    "message": "Inställningar för OpenMusicIn"
+  },
+  "optionsTagline": {
+    "message": "Länkar mellan tjänster för album, låtar och artister."
+  },
+  "saved": {
+    "message": "Sparat"
+  },
+  "sectionSubscriptions": {
+    "message": "Tjänster jag prenumererar på"
+  },
+  "sectionSubscriptionsHint": {
+    "message": "Allt annat på den här sidan styrs av de här kryssen."
+  },
+  "warnNoSubscriptions": {
+    "message": "Inget är ikryssat, och ”föreslå bara tjänster jag prenumererar på” är på — då kan bannern aldrig visas. Kryssa i minst en tjänst, eller stäng av det alternativet."
+  },
+  "sectionBehaviour": {
+    "message": "Beteende"
+  },
+  "optEnabled": {
+    "message": "Visa bannern"
+  },
+  "optEnabledHint": {
+    "message": "Huvudströmbrytare. Stäng av för att tysta tillägget utan att tappa dina inställningar."
+  },
+  "optHideOnSubscribed": {
+    "message": "Visa inget på tjänster jag prenumererar på"
+  },
+  "optHideOnSubscribedHint": {
+    "message": "Ingen banner på en tjänst du redan betalar för — det finns inget att byta bort från."
+  },
+  "optOnlySuggestSubscribed": {
+    "message": "Föreslå bara tjänster jag prenumererar på"
+  },
+  "optOnlySuggestSubscribedHint": {
+    "message": "Erbjud aldrig en tjänst du saknar konto på."
+  },
+  "sectionTypes": {
+    "message": "Visa bannern för"
+  },
+  "sectionTypesHint": {
+    "message": "Albumsidor matchar mest tillförlitligt; enskilda låtar varierar mer mellan katalogerna."
+  },
+  "typeAlbum": {
+    "message": "Album"
+  },
+  "typeTrack": {
+    "message": "Låtar"
+  },
+  "typeArtist": {
+    "message": "Artister"
+  },
+  "sectionRegion": {
+    "message": "Butik"
+  },
+  "sectionRegionHint": {
+    "message": "Apple Music och Amazon Music har olika katalog per land. Automatiskt läser landet ur sidans adress, annars ur webbläsarens språk."
+  },
+  "regionAuto": {
+    "message": "Automatiskt"
+  },
+  "tagExact": {
+    "message": "exakta länkar"
+  },
+  "tagSearch": {
+    "message": "endast sök"
+  },
+  "tagExactHint": {
+    "message": "Tjänsten har ett publikt API, så bannern kan länka direkt till utgåvan."
+  },
+  "tagSearchHint": {
+    "message": "Tjänsten saknar publikt API utan inloggning, så bannern öppnar en sökning."
+  },
+  "sectionHow": {
+    "message": "Så fungerar matchningen"
+  },
+  "howExact": {
+    "message": "Apple Music och Deezer har öppna katalog-API:er, så bannern länkar direkt till rätt utgåva. Kandidaterna poängsätts på artist och titel med utgåvetillägg som ”(Deluxe Edition)” bortstädade, och en svag träff nedgraderas till en sökning i stället för att skicka dig fel."
+  },
+  "howSearch": {
+    "message": "Spotify, TIDAL, YouTube Music och Amazon Music saknar publikt API som fungerar utan inloggning, så de knapparna öppnar en förifylld sökning i tjänsten."
+  },
+  "howPrivacy": {
+    "message": "Artist och titel som lästs från sidan skickas bara till itunes.apple.com och api.deezer.com, och bara för att slå upp en träff. Inget skickas någon annanstans, och ingen historik sparas."
+  }
+}

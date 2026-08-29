@@ -1,0 +1,90 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Banner preview</title>
+<style>
+  /* App-shell layout, the way YouTube Music and Spotify are built. */
+  html, body { height:100%; }
+  body { margin:0; font:14px -apple-system,system-ui,sans-serif; background:#121212; color:#eee; }
+  /* Fixed player bar pinned to the bottom — the element that went missing. */
+  .player { position:fixed; bottom:0; left:0; right:0; height:64px; background:#282828;
+            border-top:1px solid #3a3a3a; display:flex; align-items:center; gap:14px;
+            padding:0 20px; z-index:5; }
+  /* Mimics how these apps pin their own chrome: position:fixed against the
+     viewport. This is exactly what a padding-based push would fail to move. */
+  .sitenav { position:fixed; top:0; left:0; right:0; height:56px; background:#1f1f24;
+             border-bottom:1px solid #333; display:flex; align-items:center; gap:18px;
+             padding:0 20px; z-index:5; }
+  .sitenav b { color:#fff; }
+  .sitenav a { color:#bbb; text-decoration:none; }
+  .fake { padding:96px 40px 40px; }
+  .fake h1 { font-size:44px; margin:0 0 6px; }
+  .fake p { color:#aaa; }
+  .controls { position:fixed; bottom:16px; left:16px; display:flex; gap:8px; z-index:10; }
+  button { font:inherit; padding:8px 14px; border-radius:8px; border:1px solid #444; background:#222; color:#eee; cursor:pointer; }
+</style></head>
+<body>
+  <nav class="sitenav"><b>MockMusic</b><a href="#">Hem</a><a href="#">Sök</a><a href="#">Bibliotek</a></nav>
+  <div class="fake">
+    <h1>In Rainbows</h1>
+    <p>Radiohead · Album · 2007 · 10 songs</p>
+    <p>A mock streaming page, so the banner can be seen in context.</p>
+  </div>
+  <div class="player"><b>▶</b><span>Nude — Radiohead</span></div>
+  <div class="controls">
+    <button id="resolved">Resolved state</button>
+    <button id="pending">Pending state</button>
+    <button id="few">Two services only</button>
+    <button id="hide">Dismiss (unpush)</button>
+    <button id="probe">Probe</button>
+  </div>
+
+  <script src="chrome-stub.js"></script>
+  <script>
+  // Load the source files with a cache buster — otherwise the browser happily
+  // serves a stale banner.js and the preview measures code that is not on disk.
+  window.__srcReady = ['../src/common/services.js', '../src/content/banner.js']
+    .reduce((chain, src) => chain.then(() => new Promise((res, rej) => {
+      const el = document.createElement('script');
+      el.src = src + '?t=' + Date.now();
+      el.onload = res; el.onerror = rej;
+      document.head.appendChild(el);
+    })), Promise.resolve());
+  </script>
+  <script>
+  Promise.all([window.__stubReady, window.__srcReady]).then(() => {
+    const { SERVICES, Banner } = window.OMI;
+    const item = { type: 'album', title: 'In Rainbows', artist: 'Radiohead' };
+
+    function show(ids, mode) {
+      const entries = new Map();
+      for (const id of ids) {
+        const s = SERVICES[id];
+        if (mode === 'pending' && s.resolver) {
+          entries.set(id, { url: '#', kind: 'search', pending: true });
+        } else if (s.resolver) {
+          entries.set(id, { url: '#', kind: 'match', pending: false,
+            matchedTitle: 'In Rainbows', matchedArtist: 'Radiohead' });
+        } else {
+          entries.set(id, { url: '#', kind: 'search', pending: false });
+        }
+      }
+      Banner.render({ item, services: ids.map((i) => SERVICES[i]), entries },
+        { onDismiss: () => Banner.remove(), onSettings: () => alert('settings') });
+    }
+
+    const all = ['appleMusic', 'youtubeMusic', 'tidal', 'deezer', 'amazonMusic'];
+    document.getElementById('resolved').onclick = () => show(all, 'resolved');
+    document.getElementById('pending').onclick = () => show(all, 'pending');
+    document.getElementById('few').onclick = () => show(['tidal', 'deezer'], 'resolved');
+    document.getElementById('hide').onclick = () => Banner.remove();
+    window.probe = () => {
+      const p = document.querySelector('.player').getBoundingClientRect();
+      const n = document.querySelector('.sitenav').getBoundingClientRect();
+      return { playerTop: Math.round(p.top), playerBottom: Math.round(p.bottom),
+               viewportH: innerHeight, playerVisible: p.bottom <= innerHeight + 1,
+               navTop: Math.round(n.top) };
+    };
+    document.getElementById('probe').onclick = () => console.log(JSON.stringify(window.probe()));
+    show(all, 'resolved');
+  });
+  </script>
+</body></html>

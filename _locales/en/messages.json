@@ -1,0 +1,125 @@
+{
+  "extName": {
+    "message": "OpenMusicIn"
+  },
+  "extDesc": {
+    "message": "Open an album, track or artist on one streaming service and jump straight to it on the services you subscribe to."
+  },
+  "actionTitle": {
+    "message": "OpenMusicIn — show the banner again"
+  },
+  "bannerOpenIn": {
+    "message": "Open in"
+  },
+  "kindMatch": {
+    "message": "exact"
+  },
+  "kindSearch": {
+    "message": "search"
+  },
+  "kindPending": {
+    "message": "looking…"
+  },
+  "tooltipMatch": {
+    "message": "Matched: $1 — $2"
+  },
+  "tooltipSearch": {
+    "message": "No public API for this service — opens a search instead"
+  },
+  "tooltipPending": {
+    "message": "Looking for an exact match…"
+  },
+  "openSettings": {
+    "message": "Settings"
+  },
+  "dismiss": {
+    "message": "Dismiss"
+  },
+  "optionsTitle": {
+    "message": "OpenMusicIn settings"
+  },
+  "optionsTagline": {
+    "message": "Cross-service links for albums, tracks and artists."
+  },
+  "saved": {
+    "message": "Saved"
+  },
+  "sectionSubscriptions": {
+    "message": "Services I subscribe to"
+  },
+  "sectionSubscriptionsHint": {
+    "message": "Everything else on this page is driven by these ticks."
+  },
+  "warnNoSubscriptions": {
+    "message": "Nothing is ticked, and “only suggest services I subscribe to” is on — so the banner will never appear. Tick at least one service, or turn that option off."
+  },
+  "sectionBehaviour": {
+    "message": "Behaviour"
+  },
+  "optEnabled": {
+    "message": "Show the banner"
+  },
+  "optEnabledHint": {
+    "message": "Master switch. Turn off to silence the extension without losing your settings."
+  },
+  "optHideOnSubscribed": {
+    "message": "Stay hidden on services I subscribe to"
+  },
+  "optHideOnSubscribedHint": {
+    "message": "No banner on a service you already pay for — there is nothing to switch away from."
+  },
+  "optOnlySuggestSubscribed": {
+    "message": "Only suggest services I subscribe to"
+  },
+  "optOnlySuggestSubscribedHint": {
+    "message": "Never offer a service you have no account on."
+  },
+  "sectionTypes": {
+    "message": "Show the banner for"
+  },
+  "sectionTypesHint": {
+    "message": "Album pages match most reliably; individual tracks vary between catalogues."
+  },
+  "typeAlbum": {
+    "message": "Albums"
+  },
+  "typeTrack": {
+    "message": "Tracks"
+  },
+  "typeArtist": {
+    "message": "Artists"
+  },
+  "sectionRegion": {
+    "message": "Storefront"
+  },
+  "sectionRegionHint": {
+    "message": "Apple Music and Amazon Music serve a different catalogue per country. Automatic reads it from the page URL, then from your browser language."
+  },
+  "regionAuto": {
+    "message": "Automatic"
+  },
+  "tagExact": {
+    "message": "exact links"
+  },
+  "tagSearch": {
+    "message": "search only"
+  },
+  "tagExactHint": {
+    "message": "This service has a public API, so the banner can link straight to the release."
+  },
+  "tagSearchHint": {
+    "message": "This service has no public API without a login, so the banner opens a search."
+  },
+  "sectionHow": {
+    "message": "How the matching works"
+  },
+  "howExact": {
+    "message": "Apple Music and Deezer publish open catalogue APIs, so the banner links straight to the matching release. Candidates are scored on artist and title with edition suffixes such as “(Deluxe Edition)” stripped, and a weak match is downgraded to a search rather than sending you somewhere wrong."
+  },
+  "howSearch": {
+    "message": "Spotify, TIDAL, YouTube Music and Amazon Music have no public API that works without a login, so those buttons open a pre-filled search in that service."
+  },
+  "howPrivacy": {
+    "message": "The artist and title read from the page are sent only to itunes.apple.com and api.deezer.com, and only to look up a match. Nothing is sent anywhere else, and no history is stored."
+  }
+}

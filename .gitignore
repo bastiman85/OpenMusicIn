@@ -1,0 +1,9 @@
+# Build output — regenerate with tools/package.sh
+dist/
+
+# macOS / editors
+.DS_Store
+*.swp
+
+# Local preview server config, not part of the extension
+.claude/
