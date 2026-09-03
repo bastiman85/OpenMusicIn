@@ -2,7 +2,8 @@
 
 > Last Updated: 2026-08-29
 > Version: 0.9.1 — submitted, Unlisted, listed in English and Swedish.
-> Status: **submitted for review 2026-08-29.** Awaiting the outcome.
+> Status: **rejected 2026-08-29 for keyword spam; descriptions rewritten,
+> awaiting resubmission.** Listing metadata only — the package is unchanged.
 > 0.9.0 was cancelled before review completed, to avoid shipping the Apple
 > Music layout bug.
 > Expect a longer wait than usual: the dashboard warned that the twenty host
@@ -23,10 +24,10 @@ OpenMusicIn puts a bar at the top of album, track and artist pages so you can op
 Found an album on a service you do not pay for? One click takes you to it on the one you do.
 
 FEATURES
-• Works on Spotify, Apple Music, YouTube Music, TIDAL, Deezer and Amazon Music — as both the page you start from and the place you end up.
+• Supports six music services: Spotify, Apple Music, YouTube Music, TIDAL, Deezer and Amazon Music — each works both as the page you start from and as the place you end up.
 • Recognises albums, tracks and artists. Turn any of the three off if you only want one.
-• Every button says what it will do: "exact" opens the matching release directly, "search" opens a search already filled in with the artist and title.
-• Tell it which services you subscribe to and it stays out of your way — no bar on a service you already pay for, and it never offers one you have no account on.
+• Every button says what it will do. "exact" opens the matching release directly. "search" opens a search already filled in with the artist and title, which is what you get for the services that offer no public way to look a release up.
+• Tell it which services you subscribe to and it stays out of your way — no bar on one you already pay for, and it never offers one you have no account on.
 • The bar pushes the page down instead of covering it, so the site's own menus and player stay usable.
 • Dismiss it for any release you are not interested in.
 • Careful matching. Edition suffixes such as "(Deluxe Edition)" or "- 2011 Remaster" are ignored when looking a release up, but a live or demo recording is never passed off as the studio album. When the match is not convincing, you get a search rather than a wrong link.
@@ -35,27 +36,24 @@ FEATURES
 
 HOW TO USE
 1. Install the extension. The settings open by themselves the first time.
-2. Tick the music services you subscribe to. Nothing appears until you do.
-3. Open any album, track or artist page on one of the six services.
+2. Tick the services you subscribe to. Nothing appears until you do.
+3. Open any album, track or artist page on a supported service.
 4. Click the service you want in the bar at the top. It opens in a new tab.
 5. Click the extension icon in the toolbar to bring a dismissed bar back.
-
-WHY SOME BUTTONS SAY "SEARCH"
-Apple Music and Deezer let anyone look a release up, so those buttons go straight to it. Spotify, TIDAL, YouTube Music and Amazon Music offer no such way in, so those buttons open a search with the artist and title already typed for you. The label on each button tells you which you are getting, every time.
 
 PRIVACY
 No accounts, no analytics, no tracking, and no server of our own. Nothing about you is collected.
 
-To find a matching release, the artist name and title shown on the page are sent to Apple's and Deezer's public catalogue searches. That is all that is sent, and it is sent nowhere else. No record is kept of the pages you visit.
+To find a matching release, the artist name and title shown on the page are sent to two public music catalogue searches. That is all that is sent, and it is sent nowhere else. No record is kept of the pages you visit.
 
 Your settings are held by Chrome and carried between your own computers by Chrome's own sync, under your Google account. We never receive them.
 
 Full policy: https://bastiman85.github.io/OpenMusicIn/privacy.html
 
 PERMISSIONS
-• "Read your data on the six music services" — the extension has to read the artist and album name from the page you are on in order to find that release elsewhere. It reads nothing else, and it runs on no other website.
-• "Read your data on itunes.apple.com and api.deezer.com" — these are the two catalogue searches used to find a matching release.
-• "Storage" — remembers which services you subscribe to, your display choices, and which bars you have dismissed.
+• Read your data on the supported music services — the extension has to read the artist and album name from the page you are on in order to find that release elsewhere. It reads nothing else, and it runs on no other website.
+• Read your data on two catalogue search services — these are what it asks to find a matching release.
+• Storage — remembers which services you subscribe to, your display choices, and which bars you have dismissed.
 
 SUPPORT
 Bugs and suggestions: https://github.com/bastiman85/OpenMusicIn/issues
@@ -107,9 +105,9 @@ OpenMusicIn lägger en rad högst upp på album-, låt- och artistsidor så att 
 Hittade du ett album på en tjänst du inte betalar för? Ett klick tar dig dit på den du har.
 
 FUNKTIONER
-• Fungerar på Spotify, Apple Music, YouTube Music, TIDAL, Deezer och Amazon Music — både som sidan du utgår från och som stället du hamnar på.
+• Stöder sex musiktjänster: Spotify, Apple Music, YouTube Music, TIDAL, Deezer och Amazon Music — var och en fungerar både som sidan du utgår från och som stället du hamnar på.
 • Känner igen album, låtar och artister. Stäng av vilken som av de tre om du bara vill ha en.
-• Varje knapp säger vad den kommer att göra: "exakt" öppnar rätt utgåva direkt, "sök" öppnar en sökning som redan är ifylld med artist och titel.
+• Varje knapp säger vad den kommer att göra. "exakt" öppnar rätt utgåva direkt. "sök" öppnar en sökning som redan är ifylld med artist och titel, vilket är vad du får för de tjänster som saknar publik väg att slå upp en utgåva.
 • Ange vilka tjänster du prenumererar på så håller sig tillägget undan — ingen rad på en tjänst du redan betalar för, och den föreslår aldrig en tjänst du saknar konto på.
 • Raden skjuter ner sidan i stället för att täcka den, så tjänstens egna menyer och spelare går fortfarande att använda.
 • Stäng den för en utgåva du inte är intresserad av.
@@ -119,27 +117,24 @@ FUNKTIONER
 
 SÅ ANVÄNDER DU DET
 1. Installera tillägget. Inställningarna öppnas av sig själva första gången.
-2. Kryssa i de musiktjänster du prenumererar på. Ingenting visas förrän du gjort det.
-3. Öppna en album-, låt- eller artistsida på någon av de sex tjänsterna.
+2. Kryssa i de tjänster du prenumererar på. Ingenting visas förrän du gjort det.
+3. Öppna en album-, låt- eller artistsida på en tjänst som stöds.
 4. Klicka på den tjänst du vill ha i raden högst upp. Den öppnas i en ny flik.
 5. Klicka på tilläggets ikon i verktygsfältet för att ta tillbaka en rad du stängt.
-
-VARFÖR VISSA KNAPPAR SÄGER "SÖK"
-Apple Music och Deezer låter vem som helst slå upp en utgåva, så de knapparna går direkt dit. Spotify, TIDAL, YouTube Music och Amazon Music erbjuder ingen sådan väg in, så de knapparna öppnar en sökning med artist och titel redan ifyllda. Etiketten på varje knapp talar om vilket du får, varje gång.
 
 INTEGRITET
 Inga konton, ingen analys, ingen spårning och ingen egen server. Ingenting om dig samlas in.
 
-För att hitta en matchande utgåva skickas artistnamnet och titeln som visas på sidan till Apples och Deezers publika katalogsökningar. Det är allt som skickas, och det skickas ingen annanstans. Ingen historik över vilka sidor du besöker sparas.
+För att hitta en matchande utgåva skickas artistnamnet och titeln som visas på sidan till två publika katalogsökningar för musik. Det är allt som skickas, och det skickas ingen annanstans. Ingen historik över vilka sidor du besöker sparas.
 
 Dina inställningar förvaras av Chrome och bärs mellan dina egna datorer av Chromes egen synkronisering, under ditt Google-konto. Vi får dem aldrig.
 
 Fullständig policy: https://bastiman85.github.io/OpenMusicIn/privacy.html
 
 BEHÖRIGHETER
-• "Läsa dina data på de sex musiktjänsterna" — tillägget måste läsa artist- och albumnamn från sidan du är på för att kunna hitta utgåvan någon annanstans. Det läser ingenting annat, och det körs inte på någon annan webbplats.
-• "Läsa dina data på itunes.apple.com och api.deezer.com" — det är de två katalogsökningar som används för att hitta en matchande utgåva.
-• "Lagring" — kommer ihåg vilka tjänster du prenumererar på, dina visningsval och vilka rader du stängt.
+• Läsa dina data på de musiktjänster som stöds — tillägget måste läsa artist- och albumnamn från sidan du är på för att kunna hitta utgåvan någon annanstans. Det läser ingenting annat, och det körs inte på någon annan webbplats.
+• Läsa dina data på två katalogsökningar — det är dem den frågar för att hitta en matchande utgåva.
+• Lagring — kommer ihåg vilka tjänster du prenumererar på, dina visningsval och vilka rader du stängt.
 
 SUPPORT
 Buggar och förslag: https://github.com/bastiman85/OpenMusicIn/issues
@@ -440,4 +435,27 @@ extension does, and the answer to each:
 
 ### Rejection History
 
-None so far.
+**2026-08-29 — v0.9.1 — Keyword Spam** (violation reference: Yellow Argon)
+
+> "Har överdrivet många sökord i objektets beskrivning."
+> Quoted: *Spotify, Apple Music, YouTube Music, TIDAL, Deezer and Amazon Music*
+
+Cause: the full six-service list appeared **twice** in the description — once in
+the feature list and once, split up, in a section explaining why some buttons
+open a search. Thirteen brand mentions in a 3,200-character description read as
+keyword stuffing regardless of intent.
+
+Fix: each service is named **exactly once**, in a single canonical list under
+FEATURES. Everywhere else refers to them generically ("a supported service",
+"two catalogue search services"). The section that re-listed them was removed and
+its one useful fact folded into the button-label bullet. Brand mentions went from
+13 to 6 in each language, and the hostnames `itunes.apple.com` and
+`api.deezer.com` were dropped from the description — they carry brand names, add
+nothing for users, and the reviewer reads the real justifications on the Privacy
+practices tab anyway.
+
+Only the listing changed. The package is untouched, so no version bump is
+needed — this is a metadata resubmission.
+
+Lesson for future edits: naming the supported services is legitimately
+descriptive, but only once. Every later reference should be generic.
