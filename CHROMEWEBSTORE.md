@@ -19,47 +19,11 @@ Jump from an album, track or artist to the same release on the music services yo
 
 **Detailed Description** [REQUIRED]
 
-OpenMusicIn puts a bar at the top of album, track and artist pages so you can open the same release on the music services you actually subscribe to.
+OpenMusicIn adds a bar at the top of album, track and artist pages on music streaming sites, linking to the same release on the other services you use.
 
-Found an album on a service you do not pay for? One click takes you to it on the one you do.
+Tick the services you subscribe to and the bar offers only those, staying hidden on one you already pay for. Every link is labelled: a direct link where the release can be looked up, otherwise a ready-made search.
 
-FEATURES
-• Supports six music services: Spotify, Apple Music, YouTube Music, TIDAL, Deezer and Amazon Music — each works both as the page you start from and as the place you end up.
-• Recognises albums, tracks and artists. Turn any of the three off if you only want one.
-• Every button says what it will do. "exact" opens the matching release directly. "search" opens a search already filled in with the artist and title, which is what you get for the services that offer no public way to look a release up.
-• Tell it which services you subscribe to and it stays out of your way — no bar on one you already pay for, and it never offers one you have no account on.
-• The bar pushes the page down instead of covering it, so the site's own menus and player stay usable.
-• Dismiss it for any release you are not interested in.
-• Careful matching. Edition suffixes such as "(Deluxe Edition)" or "- 2011 Remaster" are ignored when looking a release up, but a live or demo recording is never passed off as the studio album. When the match is not convincing, you get a search rather than a wrong link.
-• Your settings follow you to your other computers.
-• Available in English and Swedish.
-
-HOW TO USE
-1. Install the extension. The settings open by themselves the first time.
-2. Tick the services you subscribe to. Nothing appears until you do.
-3. Open any album, track or artist page on a supported service.
-4. Click the service you want in the bar at the top. It opens in a new tab.
-5. Click the extension icon in the toolbar to bring a dismissed bar back.
-
-PRIVACY
-No accounts, no analytics, no tracking, and no server of our own. Nothing about you is collected.
-
-To find a matching release, the artist name and title shown on the page are sent to two public music catalogue searches. That is all that is sent, and it is sent nowhere else. No record is kept of the pages you visit.
-
-Your settings are held by Chrome and carried between your own computers by Chrome's own sync, under your Google account. We never receive them.
-
-Full policy: https://bastiman85.github.io/OpenMusicIn/privacy.html
-
-PERMISSIONS
-• Read your data on the supported music services — the extension has to read the artist and album name from the page you are on in order to find that release elsewhere. It reads nothing else, and it runs on no other website.
-• Read your data on two catalogue search services — these are what it asks to find a matching release.
-• Storage — remembers which services you subscribe to, your display choices, and which bars you have dismissed.
-
-SUPPORT
-Bugs and suggestions: https://github.com/bastiman85/OpenMusicIn/issues
-Email: openmusicin@bastiman.nu
-
-Version 0.9.1 — First release.
+The bar pushes the page down instead of covering it, and can be dismissed. Nothing about you is collected.
 
 **Category** [REQUIRED]
 Entertainment
@@ -100,47 +64,11 @@ Hoppa från ett album, en låt eller en artist till samma utgåva på de musiktj
 
 **Detaljerad beskrivning**
 
-OpenMusicIn lägger en rad högst upp på album-, låt- och artistsidor så att du kan öppna samma utgåva på de musiktjänster du faktiskt prenumererar på.
+OpenMusicIn lägger en rad högst upp på album-, låt- och artistsidor hos musiktjänster på webben, med länk till samma utgåva hos de andra tjänster du använder.
 
-Hittade du ett album på en tjänst du inte betalar för? Ett klick tar dig dit på den du har.
+Kryssa i vilka tjänster du prenumererar på så erbjuder raden bara dessa, och håller sig dold på en du redan betalar för. Varje länk är märkt: en direktlänk där utgåvan går att slå upp, annars en färdig sökning.
 
-FUNKTIONER
-• Stöder sex musiktjänster: Spotify, Apple Music, YouTube Music, TIDAL, Deezer och Amazon Music — var och en fungerar både som sidan du utgår från och som stället du hamnar på.
-• Känner igen album, låtar och artister. Stäng av vilken som av de tre om du bara vill ha en.
-• Varje knapp säger vad den kommer att göra. "exakt" öppnar rätt utgåva direkt. "sök" öppnar en sökning som redan är ifylld med artist och titel, vilket är vad du får för de tjänster som saknar publik väg att slå upp en utgåva.
-• Ange vilka tjänster du prenumererar på så håller sig tillägget undan — ingen rad på en tjänst du redan betalar för, och den föreslår aldrig en tjänst du saknar konto på.
-• Raden skjuter ner sidan i stället för att täcka den, så tjänstens egna menyer och spelare går fortfarande att använda.
-• Stäng den för en utgåva du inte är intresserad av.
-• Omsorgsfull matchning. Utgåvetillägg som "(Deluxe Edition)" eller "- 2011 Remaster" ignoreras vid uppslagningen, men en live- eller demoinspelning presenteras aldrig som studioalbumet. När träffen inte är övertygande får du en sökning i stället för en felaktig länk.
-• Dina inställningar följer med till dina andra datorer.
-• Finns på svenska och engelska.
-
-SÅ ANVÄNDER DU DET
-1. Installera tillägget. Inställningarna öppnas av sig själva första gången.
-2. Kryssa i de tjänster du prenumererar på. Ingenting visas förrän du gjort det.
-3. Öppna en album-, låt- eller artistsida på en tjänst som stöds.
-4. Klicka på den tjänst du vill ha i raden högst upp. Den öppnas i en ny flik.
-5. Klicka på tilläggets ikon i verktygsfältet för att ta tillbaka en rad du stängt.
-
-INTEGRITET
-Inga konton, ingen analys, ingen spårning och ingen egen server. Ingenting om dig samlas in.
-
-För att hitta en matchande utgåva skickas artistnamnet och titeln som visas på sidan till två publika katalogsökningar för musik. Det är allt som skickas, och det skickas ingen annanstans. Ingen historik över vilka sidor du besöker sparas.
-
-Dina inställningar förvaras av Chrome och bärs mellan dina egna datorer av Chromes egen synkronisering, under ditt Google-konto. Vi får dem aldrig.
-
-Fullständig policy: https://bastiman85.github.io/OpenMusicIn/privacy.html
-
-BEHÖRIGHETER
-• Läsa dina data på de musiktjänster som stöds — tillägget måste läsa artist- och albumnamn från sidan du är på för att kunna hitta utgåvan någon annanstans. Det läser ingenting annat, och det körs inte på någon annan webbplats.
-• Läsa dina data på två katalogsökningar — det är dem den frågar för att hitta en matchande utgåva.
-• Lagring — kommer ihåg vilka tjänster du prenumererar på, dina visningsval och vilka rader du stängt.
-
-SUPPORT
-Buggar och förslag: https://github.com/bastiman85/OpenMusicIn/issues
-E-post: openmusicin@bastiman.nu
-
-Version 0.9.1 — Första utgåvan.
+Raden skjuter ner sidan i stället för att täcka den, och går att stänga. Ingenting om dig samlas in.
 
 ## Graphics & Assets
 
@@ -435,7 +363,22 @@ extension does, and the answer to each:
 
 ### Rejection History
 
-**2026-08-29 — v0.9.1 — Keyword Spam** (violation reference: Yellow Argon)
+**2026-08-29 (second) — v0.9.1 — Keyword Spam again** (Yellow Argon)
+
+Same violation, same quoted content — the six-service list — even though each
+service was by then named only once. The reviewer objects to naming the services
+in the description at all, not to how often.
+
+Fix: no brand names anywhere in the description, and cut to three short
+paragraphs that fit above the fold. Privacy policy and support links moved out of
+the description body — the dashboard has dedicated fields for both, so repeating
+them was length without benefit. From ~2,900 characters to ~450.
+
+The permission justifications on the Privacy practices tab still name the hosts
+and services. That is a different field, it is reviewer-facing, and Google
+explicitly asks for that specificity there. Do not strip those.
+
+**2026-08-29 (first) — v0.9.1 — Keyword Spam** (violation reference: Yellow Argon)
 
 > "Har överdrivet många sökord i objektets beskrivning."
 > Quoted: *Spotify, Apple Music, YouTube Music, TIDAL, Deezer and Amazon Music*
